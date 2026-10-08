@@ -1,0 +1,28 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program15
+    {
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 10;
+            double d = 10.0;
+
+            // Неявное приведение: int → double перед сравнением
+            bool res = i != d;
+
+            Console.WriteLine($"int i = {i}, тип: {i.GetType().Name}");      // Int32
+            Console.WriteLine($"double d = {d}, тип: {d.GetType().Name}");  // Double
+            Console.WriteLine($"{i} != {d} = {res}");                       // False
+
+            // Для сравнения: если бы мы хотели сравнить как целые, нужно привести явно
+            bool resInt = i != (int)d;
+            Console.WriteLine($"i != (int)d = {resInt}");                    // False, но теперь оба int
+        }
+    }
+    }
